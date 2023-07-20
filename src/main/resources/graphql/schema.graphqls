@@ -1,0 +1,47 @@
+type Query {
+    employeeById(id: ID): Employee
+    findAll: [Employee]
+}
+
+type Mutation {
+    saveEmployee(employee: InputEmployee): Employee
+    updateEmployee(id: Int, employee: InputEmployee): Employee
+    deleteEmployee(id: Int): Boolean
+}
+
+
+type Employee {
+    id: ID
+    name: String
+    email: String
+    phone: String
+    designation: String
+    address : Address
+}
+
+type Address {
+    id: ID
+    street: String
+    city: String
+    state: String
+    country : String
+}
+
+input InputEmployee {
+    id: ID
+    name: String
+    email: String
+    phone: String
+    designation: String
+    address : InputAddress
+}
+
+input InputAddress {
+    id: ID
+    street: String
+    city: String
+    state: String
+    country : String
+
+}
+
